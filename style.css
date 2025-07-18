@@ -586,6 +586,8 @@ canvas {
 }
 
 button.engine {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   background: #666;
   border-radius: 50%;
   width: 140px;
@@ -605,6 +607,8 @@ button.engine {
 }
 
 button.engine:active {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   box-shadow:
     0 0 12px 5px #000 inset,
     0 -40px 80px #000000cc inset,
