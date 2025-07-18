@@ -45,8 +45,8 @@
   <span class="menu_top_but" onclick="openNav()">&#9776;</span>
   <div class="container" id="container">
     <div class="name_status">
-    <div class="main_name"> КАЮТА ЕТО</div>
-    <div class="wifi_on" id="status_wifi"></div>
+      <div class="main_name"> КАЮТА ЕТО</div>
+      <div class="wifi_on" id="status_wifi"></div>
     </div>
     <div class="cur_status" id="cur_status"></div>
     <div class="sensors_weather">
@@ -62,50 +62,56 @@
     <div class="color_container">
       <div class="cur_color" id="cur_color"></div>
     </div>
-    <form class="setting" method="get" action="/SetColorBright">
-      <fieldset class="set_color">
-        <legend class="color_name" id="set_color_name">НАСТРОЙКА</legend>
-        <div class="progress">
-          <div class="Value" id="SelectValueRed"></div> <!-- indicate value to website-->
-          <input class="slider" type="range" min="0" max="255" value="0" name="RedVal" id="sliderRed">
-          <!-- create slider-->
-
-        </div>
-        <div class="progress">
-          <div class="Value" id="SelectValueGreen"></div> <!-- indicate value to website-->
-          <input class="slider" type="range" min="0" max="255" value="0" name="GreenVal" id="sliderGreen">
-          <!-- create slider-->
-
-        </div>
-        <div class="progress">
-          <div class="Value" id="SelectValueBlue"></div> <!-- indicate value to website-->
-          <input class="slider" type="range" min="0" max="255" value="0" name="BlueVal" id="sliderBlue">
-          <!-- create slider-->
-        </div>
-
-        <div class="progress">
-          <div class="Value" id="SelectValueBright"></div> <!-- indicate value to website-->
-          <input class="slider" type="range" min="0" max="255" value="0" name="BrightVal" id="sliderBright">
-          <!-- create slider-->
-        </div>
-      </fieldset>
-      <div class="set_color_buttons">
-        <table class="table" cellspacing="2" border="0">
-          <tr>
-            <th class="column-1" id="nameswt1">Режим:</th>
-            <td class="column-2">
-              <input type="checkbox" class="checkboxGreen" id="automode">
-              <label for="automode"></label>
-            </td>
-          </tr>
-        </table>
+    <fieldset class="set_color">
+      <legend class="color_name" id="set_color_name">НАСТРОЙКА</legend>
+      <div class="progress">
+        <div class="Value" id="SelectValueRed"></div>
+        <input class="slider" type="range" min="0" max="255" value="0" name="RedVal" id="sliderRed">
       </div>
-      <div id="knob-container" class="knob-container">
-        <div id="knob-base" class="knob-base">
-          <div id="knob" class="knob"></div>
+
+      <div class="progress">
+        <div class="Value" id="SelectValueGreen"></div>
+        <input class="slider" type="range" min="0" max="255" value="0" name="GreenVal" id="sliderGreen">
+      </div>
+      
+      <div class="progress">
+        <div class="Value" id="SelectValueBlue"></div>
+        <input class="slider" type="range" min="0" max="255" value="0" name="BlueVal" id="sliderBlue">
+      </div>
+
+      <div class="progress">
+        <div class="Value" id="SelectValueBright"></div>
+        <input class="slider" type="range" min="0" max="255" value="0" name="BrightVal" id="sliderBright">
+      </div>
+    </fieldset>
+    <div class="set_color_buttons">
+      <table class="table" cellspacing="2" border="0">
+        <tr>
+          <th class="column-1" id="nameswt1">Режим:</th>
+          <td class="column-2">
+            <input type="checkbox" class="checkboxGreen" id="automode">
+            <label for="automode"></label>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="outer-black">
+      <div class="outer-iron">
+        <div class="glare"></div>
+        <div class="inner-black">
+          <div class="inner-black-2">
+            <div class="inner-black-3">
+              <button class="engine">
+                <div class="light"></div>
+                <span>Light<br /></span>
+                <span>Start <br />Stop</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
   <script src="script.js" defer></script>
 </body>

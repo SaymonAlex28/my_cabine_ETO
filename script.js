@@ -133,7 +133,6 @@ sliderBright.oninput = function () {
   firebaseBright.set(sliderBright.value);
 }
 
-
 //Режим работы цвета
 let modecheck = firebase.database();
 let Automodenow;
@@ -141,7 +140,7 @@ modecheck.ref().on("value", function (snap) {
   Automodenow = snap.val().Automode;
   if (Automodenow == 1) {
     document.getElementById('automode').checked = 1;
-    document.getElementById('set_color_name').innerText = "АВТО-РЕЖИМ";
+    document.getElementById('set_color_name').innerText = "РЕЖИМ-РАДУГА";
     document.getElementById("sliderRed").classList.remove('slider');
     document.getElementById("sliderGreen").classList.remove('slider');
     document.getElementById("sliderBlue").classList.remove('slider');
@@ -173,37 +172,30 @@ $("#automode").click(function () {
 })
 
 
-// Knob
-const knob_base = document.getElementById('knob-base');
-const knob = document.getElementById('knob');
+//Engine Knob
+const button = document.querySelector('.engine');
+const light = document.querySelector('.light');
 let powercheck = firebase.database();
 let firebasePower;
 let state;
+
 powercheck.ref().on("value", function (snap) {
-  firebasePower = snap.val().PowerInfo;
-  if (firebasePower == 1) {
-    knob.classList.remove('off');
-    knob_base.classList.remove('off');
-    knob.classList.add('on');
-    knob_base.classList.add('on');
+  firebasePower = parseInt(snap.val().PowerInfo);
+  if (firebasePower === 1) {
+    button.classList.add("active");
+    state = 1;
   } else {
-    knob.classList.remove('on');
-    knob_base.classList.remove('on');
-    knob.classList.add('off');
-    knob_base.classList.add('off');
+    button.classList.remove("active");
+    state = 0;
   }
 });
 
-knob.addEventListener('click', (e) => {
+button.addEventListener('click', (e) => {
   let power = firebase.database().ref().child("Power");
-  state = state === 0 ? 1 : 0;
-  power.set(state);
-  if (state == 1) {
-    const poweron = "Подсветка, включена";
-    responsiveVoice.speak(poweron, "Russian Female");
-  } else {
-    const poweroff = "Подсветка, выключена";
-    responsiveVoice.speak(poweroff, "Russian Female");
+  if (state === 0) {
+    power.set(1);
+  } else if (state === 1) {
+    power.set(0);
   }
 });
 
