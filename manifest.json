@@ -1,11 +1,19 @@
 {
+  "id": "/esp-smart-cabine",
   "name": "ESP Cabine PWA",
   "short_name": "Smart Cabine",
+  "description": "ESP Smart Cabine",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#031321",
   "theme_color": "#031321",
+  "lang": "ru",
+  "categories": [
+    "smart-cabine",
+    "iot"
+  ],
   "icons": [
     {
       "src": "./icons/icon-192.png",
